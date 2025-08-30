@@ -2,19 +2,24 @@ import { MenuType } from "@/types/types";
 import Link from "next/link";
 import React from "react";
 import { prisma } from "@/utils/connect";
+export const dynamic = "force-dynamic"; // <-- add this at top of your page file
 
 const getData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL ? "https://" + process.env.NEXT_PUBLIC_VERCEL_URL : "http://localhost:3000"}/api/categories`, {
+  const baseUrl =
+    process.env.NEXT_PUBLIC_VERCEL_URL
+      ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+      : "http://localhost:3000";
+
+  const res = await fetch(`${baseUrl}/api/categories`, {
     cache: "no-store",
   });
 
   if (!res.ok) {
-    throw new Error("Failed!");
+    throw new Error("Failed to fetch");
   }
 
   return res.json();
 };
-
 const MenuPage = async () => {
 
   const menu: MenuType = await prisma.category.findMany();
