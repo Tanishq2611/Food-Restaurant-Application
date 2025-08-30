@@ -1,13 +1,9 @@
-import { MenuType } from "@/types/types";
-import Link from "next/link";
-import React from "react";
 import { prisma } from "@/utils/connect";
-export const dynamic = "force-dynamic"; // <-- add this at top of your page file
-
+import Link from "next/link";
 
 const MenuPage = async () => {
+  const menu = await prisma.category.findMany();
 
-  const menu: MenuType = await prisma.category.findMany();
   return (
     <div className="p-4 lg:px-20 xl:px-40 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex flex-col md:flex-row items-center">
       {menu.map((category) => (
