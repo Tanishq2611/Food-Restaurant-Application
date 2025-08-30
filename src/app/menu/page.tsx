@@ -1,7 +1,7 @@
 import { MenuType } from "@/types/types";
 import Link from "next/link";
 import React from "react";
-import prisma from "@/lib/prisma";
+import { prisma } from "@/utils/connect";
 
 const getData = async ()=>{
   const res = await fetch("/api/categories",{
