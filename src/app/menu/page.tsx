@@ -3,18 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { prisma } from "@/utils/connect";
 
-const getData = async ()=>{
-  const res = await fetch("/api/categories",{
-    cache:"no-store"
-  })
 
-  if(!res.ok){
-    throw new Error("Failed!");
-    
-  }
-
-  return res.json()
-}
 
 const MenuPage = async () => {
 
