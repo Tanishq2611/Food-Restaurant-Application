@@ -2,8 +2,10 @@ import { ProductType } from "@/types/types";
 import Image from "next/image";
 import React from "react";
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
 const getData = async ()=>{
-  const res = await fetch("/api/products",{
+  const res = await fetch("${baseUrl}/api/products",{
     cache:"no-store"
   })
 

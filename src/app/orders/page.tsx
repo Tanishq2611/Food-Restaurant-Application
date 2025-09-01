@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { toast } from "react-toastify";
-
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 const OrdersPage = () => {
   const { data: session, status } = useSession();
 
@@ -20,7 +20,7 @@ const OrdersPage = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ["orders"],
     queryFn: () =>
-      fetch("/api/orders").then((res) => res.json()),
+      fetch("${baseUrl}/api/orders").then((res) => res.json()),
   });
 
   const queryClient = useQueryClient();

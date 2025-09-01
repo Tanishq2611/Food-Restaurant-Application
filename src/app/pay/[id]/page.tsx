@@ -4,7 +4,7 @@ import CheckoutForm from "@/components/CheckoutForm";
 import { Elements } from "@stripe/react-stripe-js";
 import { StripeElementsOptions, loadStripe } from "@stripe/stripe-js";
 import { useEffect, useState } from "react";
-
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
 );
@@ -18,7 +18,7 @@ const PayPage = ({ params }: { params: { id: string } }) => {
     const makeRequest = async () => {
       try {
         const res = await fetch(
-          `/api/create-intent/${id}`,
+          `${baseUrl}/api/create-intent/${id}`,
           {
             method: "POST",
           }
