@@ -81,7 +81,7 @@ const AddPage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    try {
+  /*  try {
       const url = await upload();
       const res = await fetch("/api/products", {
         method: "POST",
@@ -90,7 +90,7 @@ const AddPage = () => {
           ...inputs,
           options,
         }),
-      });
+      });*/
 
       const data = await res.json();
 

@@ -2,7 +2,7 @@ import { MenuType } from "@/types/types";
 import Link from "next/link";
 import React from "react";
 export const dynamic = "force-dynamic";
-const getData = async ()=>{
+const getData = async ()=>{/*
   const res = await fetch("/api/categories",{
     cache:"no-store"
   })
@@ -12,7 +12,7 @@ const getData = async ()=>{
     
   }
 
-  return res.json()
+  return res.json()*/
 }
 
 const MenuPage = async () => {

@@ -4,7 +4,7 @@ import { ProductType } from "@/types/types";
 import Image from "next/image";
 import React from "react";
 export const dynamic = "force-dynamic";
-const getData = async (id: string) => {
+const getData = async (id: string) => {/*
   const res = await fetch(`/api/products/${id}`, {
     cache: "no-store",
   });
@@ -13,7 +13,7 @@ const getData = async (id: string) => {
     throw new Error("Failed!");
   }
 
-  return res.json();
+  return res.json();*/
 };
 
 const SingleProductPage = async ({ params }: { params: { id: string } }) => {

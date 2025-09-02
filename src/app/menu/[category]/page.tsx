@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 export const dynamic = "force-dynamic";
-const getData = async (category:string)=>{
+const getData = async (category:string)=>{/*
   const res = await fetch(`/api/products?cat=${category}`,{
     cache:"no-store"
   })
@@ -13,7 +13,7 @@ const getData = async (category:string)=>{
     
   }
 
-  return res.json()
+  return res.json()*/
 }
 
 type Props = {
