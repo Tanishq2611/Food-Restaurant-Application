@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-
+export const dynamic = "force-dynamic";
 type Inputs = {
   title: string;
   desc: string;
@@ -83,7 +83,7 @@ const AddPage = () => {
 
     try {
       const url = await upload();
-      const res = await fetch("http://localhost:3000/api/products", {
+      const res = await fetch("/api/products", {
         method: "POST",
         body: JSON.stringify({
           img: url,
