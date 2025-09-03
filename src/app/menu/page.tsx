@@ -1,7 +1,7 @@
 import { MenuType } from "@/types/types";
 import Link from "next/link";
 import React from "react";
-
+export const dynamic = "force-dynamic";
 const getData = async ()=>{
   const res = await fetch("https://food-restaurant-application-flame.vercel.app/api/categories",{
     cache:"no-store"
