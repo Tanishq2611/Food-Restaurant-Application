@@ -83,7 +83,7 @@ const AddPage = () => {
 
     try {
       const url = await upload();
-      const res = await fetch("http://localhost:3000/api/products", {
+      const res = await fetch("https://food-restaurant-application-flame.vercel.app/api/products", {
         method: "POST",
         body: JSON.stringify({
           img: url,
