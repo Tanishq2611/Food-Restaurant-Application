@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Lama Restaurant",
+  title: "BiteCart",
   description: "Best food in town!",
 };
 
@@ -39,3 +39,4 @@ export default function RootLayout({
     </html>
   );
 }
+
